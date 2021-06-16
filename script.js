@@ -22,7 +22,7 @@ function addName() {
   // - https://www.w3schools.com/jsref/prop_node_innertext.asp
 
   let nameElement = document.querySelector('#name');
-  nameElement.innerText = 'See script.js!';
+  nameElement.innerText = 'Emily';
 }
 
 function addFavoriteThings() {
@@ -36,7 +36,16 @@ function addFavoriteThings() {
   //   - https://htmldog.com/guides/javascript/advanced/creatingelements/
   //   - https://www.javascripttutorial.net/javascript-dom/javascript-createelement/
   //   - https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
-}
+
+  var favList = document.querySelector('#favthings');
+  var thingArray = ["gardening","concerts", "punk music", "art"];
+  for (thing in thingArray){
+    let point = document.createElement('li');
+    point.innerText = thingArray[thing];
+    favList.appendChild(point);
+  }
+  }
+
 
 function replaceImage() {
   console.log('Called replaceImage()');
@@ -46,19 +55,27 @@ function replaceImage() {
   // See:
   // - https://www.tutorialrepublic.com/javascript-tutorial/javascript-dom-get-set-attributes.php
   // - https://www.w3schools.com/jsref/met_element_setattribute.asp
+  var image = document.querySelector('#picture');
+  image.setAttribute("src", "https://living.homeserve.com/wp-content/uploads/2018/10/rat-header.jpg")
 }
 
 function changeCodeStatus() {
   console.log('Called changeCodeStatus()');
+  let codestatus = document.querySelector('#codestatus');
+  codestatus.innerHTML ="";
+  let meme = document.createElement('img');
+  meme.setAttribute("src", "https://starecat.com/content/wp-content/uploads/when-you-write-10-lines-of-code-without-searching-on-google-it-aint-much-but-its-honest-work-farmer.jpg" );
+  meme.setAttribute("width", "300");
+  meme.setAttribute("height","300");
+  codestatus.appendChild(meme);
 
   // 1. Get a reference to <div id="codestatus">
   // 2. Create image element containing a sweet ol' meme
   // 3. Replace text in codestatus w/ image
 }
 
-// Get a reference to the button w/ id="show-info-button"
-let showInfoButton = document.querySelector('#show-info-button');
-
+// Get a reference to the button w/ id="show-info-button
+var showInfoButton = document.querySelector('#show-info-button');
 // Do something when showInfoButton is clicke
 showInfoButton.addEventListener('click', function() {
   console.log('Clicked "Show Info" button');
@@ -153,7 +170,7 @@ document.addeventListener('keydown', function() {
  *   Add a delete button next to each item and allow it to delete the item
  *   it is next to.
  */
-
+20
 // Your code goes here
 
 /****************************************
